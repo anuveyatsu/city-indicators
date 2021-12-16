@@ -145,7 +145,7 @@
             "encode": {
               "enter": {
                 "text": {
-                  "value": "London"
+                  "value": "Almaty"
                 },
                 "y": {
                   "scale": "value",
@@ -171,7 +171,7 @@
             "encode": {
               "enter": {
                 "text": {
-                  "value": "England"
+                  "value": "Kazakhstan"
                 },
                 "y": {
                   "scale": "value",

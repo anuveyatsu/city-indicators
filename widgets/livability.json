@@ -4,7 +4,7 @@
     "view": {
       "title": "Livability",
       "legend": "Bus journeys in recent month",
-      "footer": "Data are sourced from the London Datastore.",
+      "footer": "Data are sourced from the Almaty Datastore.",
       "resources": [
         {
           "datasetId": "public-transport",

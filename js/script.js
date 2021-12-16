@@ -315,7 +315,7 @@ var config = {
               }
             },
             {
-              "name": "inner-london",
+              "name": "inner-almaty",
               "source": "recorded-offences",
               "transform": [
                 {
@@ -325,7 +325,7 @@ var config = {
               ]
             },
             {
-              "name": "outer-london",
+              "name": "outer-almaty",
               "source": "recorded-offences",
               "transform": [
                 {
@@ -385,7 +385,7 @@ var config = {
             {
               "type": "line",
               "from": {
-                "data": "inner-london"
+                "data": "inner-almaty"
               },
               "encode": {
                 "enter": {
@@ -409,7 +409,7 @@ var config = {
             {
               "type": "line",
               "from": {
-                "data": "outer-london"
+                "data": "outer-almaty"
               },
               "encode": {
                 "enter": {
@@ -433,12 +433,12 @@ var config = {
             {
               "type": "text",
               "from": {
-                "data": "inner-london"
+                "data": "inner-almaty"
               },
               "encode": {
                 "enter": {
                   "text": {
-                    "value": "Inner London"
+                    "value": "Inner Almaty"
                   },
                   "y": {
                     "scale": "value",
@@ -459,12 +459,12 @@ var config = {
             {
               "type": "text",
               "from": {
-                "data": "outer-london"
+                "data": "outer-almaty"
               },
               "encode": {
                 "enter": {
                   "text": {
-                    "value": "Outer London"
+                    "value": "Outer Almaty"
                   },
                   "y": {
                     "scale": "value",
@@ -491,7 +491,7 @@ var config = {
       "view": {
         "title": "Economy",
         "legend": "Recent unemployment rate",
-        "footer": "Data are sourced from the London Datastore.",
+        "footer": "Data are sourced from the Almaty Datastore.",
         "resources": [
           {
             "datasetId": "unemployment",
@@ -628,7 +628,7 @@ var config = {
       "view": {
         "title": "Health and Safety",
         "legend": "Recent average roadside PM2.5 level",
-        "footer": "Data are sourced from the London Datastore.",
+        "footer": "Data are sourced from the Almaty Datastore.",
         "resources": [
           {
             "datasetId": "air-quality",
@@ -799,7 +799,7 @@ var config = {
               "encode": {
                 "enter": {
                   "text": {
-                    "value": "London"
+                    "value": "Almaty"
                   },
                   "y": {
                     "scale": "value",
@@ -825,7 +825,7 @@ var config = {
               "encode": {
                 "enter": {
                   "text": {
-                    "value": "England"
+                    "value": "Kazakhstan"
                   },
                   "y": {
                     "scale": "value",
@@ -1063,7 +1063,7 @@ var config = {
       "view": {
         "title": "Livability",
         "legend": "Bus journeys in recent month",
-        "footer": "Data are sourced from the London Datastore.",
+        "footer": "Data are sourced from the Almaty Datastore.",
         "resources": [
           {
             "datasetId": "public-transport",

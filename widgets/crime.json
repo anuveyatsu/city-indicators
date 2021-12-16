@@ -22,7 +22,7 @@
             }
           },
           {
-            "name": "inner-london",
+            "name": "inner-almaty",
             "source": "recorded-offences",
             "transform": [
               {
@@ -32,7 +32,7 @@
             ]
           },
           {
-            "name": "outer-london",
+            "name": "outer-almaty",
             "source": "recorded-offences",
             "transform": [
               {
@@ -91,7 +91,7 @@
         "marks": [
           {
             "type": "line",
-            "from": {"data": "inner-london"},
+            "from": {"data": "inner-almaty"},
             "encode": {
               "enter": {
                 "x": {"scale": "x", "field": "Year"},
@@ -103,7 +103,7 @@
           },
           {
             "type": "line",
-            "from": {"data": "outer-london"},
+            "from": {"data": "outer-almaty"},
             "encode": {
               "enter": {
                 "x": {"scale": "x", "field": "Year"},
@@ -115,10 +115,10 @@
           },
           {
             "type": "text",
-            "from": {"data": "inner-london"},
+            "from": {"data": "inner-almaty"},
             "encode": {
               "enter": {
-                "text": {"value": "Inner London"},
+                "text": {"value": "Inner Almaty"},
                 "y": {"scale": "value", "value": 570000},
                 "fill": {"value": "#A95F6D"},
                 "font": {"value": "Lato"},
@@ -128,10 +128,10 @@
           },
           {
             "type": "text",
-            "from": {"data": "outer-london"},
+            "from": {"data": "outer-almaty"},
             "encode": {
               "enter": {
-                "text": {"value": "Outer London"},
+                "text": {"value": "Outer Almaty"},
                 "y": {"scale": "value", "value": 440000},
                 "fill": {"value": "#ECAFAF"},
                 "font": {"value": "Lato"},

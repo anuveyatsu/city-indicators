@@ -4,7 +4,7 @@
     "view": {
       "title": "Economy",
       "legend": "Recent unemployment rate",
-      "footer": "Data are sourced from the London Datastore.",
+      "footer": "Data are sourced from the Almaty Datastore.",
       "resources": [
         {
           "datasetId": "unemployment",

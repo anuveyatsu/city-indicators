@@ -4,7 +4,7 @@
     "view": {
       "title": "Health and Safety",
       "legend": "Recent average roadside PM2.5 level",
-      "footer": "Data are sourced from the London Datastore.",
+      "footer": "Data are sourced from the Almaty Datastore.",
       "resources": [
         {
           "datasetId": "air-quality",
