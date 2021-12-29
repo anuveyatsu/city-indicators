@@ -1,28 +1,36 @@
 {
-  "widget": {
-    "elementId": "economy",
-    "view": {
-      "title": "Economy",
-      "legend": "Recent unemployment rate",
-      "footer": "Data are sourced from the Almaty Datastore.",
-      "resources": [
-        {
-          "datasetId": "unemployment",
-          "name": "unemployment-rate",
-          "transform": [
-            {
-              "type": "aggregate",
-              "fields": ["date"],
-              "operations": ["argmax"]
+    "widget": {
+        "elementId": "economy",
+        "view": {
+            "title": "Economy",
+            "legend": "Recent GNI per capita figure based on purchasing power parity",
+            "footer": "Data is sourced from Open Data Kazakhstan project.",
+            "resources": [
+                {
+                    "datasetId": "gni-per-capita-ppp",
+                    "name": "gni-per-capita-ppp",
+                    "transform": [
+                        {
+                            "type": "filter",
+                            "expression": "data['Country Code'] == 'KAZ'"
+                        },
+                        {
+                            "type": "aggregate",
+                            "fields": [
+                                "Year"
+                            ],
+                            "operations": [
+                                "argmax"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "specType": "figure",
+            "spec": {
+                "fieldName": "Value",
+                "suffix": " Int$"
             }
-          ]
         }
-      ],
-      "specType": "figure",
-      "spec": {
-        "fieldName": "unemployment_rate",
-        "suffix": "%"
-      }
     }
-  }
 }

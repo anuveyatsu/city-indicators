@@ -1,506 +1,24 @@
 var config = {
   "widgets": [
     {
-      "elementId": "air-quality",
-      "view": {
-        "metadata": {},
-        "resources": [
-          {
-            "datasetId": "air-quality",
-            "name": "monthly-averages",
-            "transform": []
-          }
-        ],
-        "specType": "vega",
-        "spec": {
-          "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 195,
-          "height": 160,
-          "padding": 0,
-          "data": [
-            {
-              "name": "monthly-averages",
-              "format": {
-                "parse": {
-                  "Month": "date"
-                }
-              }
-            }
-          ],
-          "scales": [
-            {
-              "name": "x",
-              "type": "utc",
-              "range": "width",
-              "domain": {
-                "data": "monthly-averages",
-                "field": "Month"
-              }
-            },
-            {
-              "name": "roadside",
-              "type": "linear",
-              "range": "height",
-              "zero": false,
-              "domain": {
-                "data": "monthly-averages",
-                "field": "[London Mean Roadside PM2.5 Particulate (ug/m3)]"
-              }
-            }
-          ],
-          "axes": [
-            {
-              "orient": "bottom",
-              "scale": "x",
-              "labelFont": "Lato",
-              "format": "%Y",
-              "domain": false,
-              "ticks": false,
-              "labelPadding": 10,
-              "labelBound": true,
-              "labelOverlap": true,
-              "labelFontSize": 9
-            },
-            {
-              "orient": "right",
-              "scale": "roadside",
-              "labelFont": "Lato",
-              "domain": false,
-              "ticks": false,
-              "labelFontSize": 9
-            }
-          ],
-          "marks": [
-            {
-              "type": "line",
-              "from": {
-                "data": "monthly-averages"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "roadside",
-                    "field": "[London Mean Roadside PM2.5 Particulate (ug/m3)]"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#A95F6D"
-                  }
-                }
-              }
-            },
-            {
-              "type": "line",
-              "from": {
-                "data": "monthly-averages"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "roadside",
-                    "value": 11
-                  },
-                  "strokeWidth": {
-                    "value": 1
-                  },
-                  "stroke": {
-                    "value": "gray"
-                  },
-                  "strokeDash": {
-                    "value": [
-                      5,
-                      5
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "type": "line",
-              "from": {
-                "data": "monthly-averages"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "roadside",
-                    "value": 23
-                  },
-                  "strokeWidth": {
-                    "value": 1
-                  },
-                  "stroke": {
-                    "value": "gray"
-                  },
-                  "strokeDash": {
-                    "value": [
-                      5,
-                      5
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "type": "line",
-              "from": {
-                "data": "monthly-averages"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "roadside",
-                    "value": 35
-                  },
-                  "strokeWidth": {
-                    "value": 1
-                  },
-                  "stroke": {
-                    "value": "gray"
-                  },
-                  "strokeDash": {
-                    "value": [
-                      5,
-                      5
-                    ]
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "encode": {
-                "enter": {
-                  "fill": {
-                    "value": "gray"
-                  },
-                  "zindex": {
-                    "value": 10
-                  },
-                  "text": {
-                    "value": "Low (index 1)"
-                  },
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "roadside",
-                    "value": 11
-                  },
-                  "dx": {
-                    "value": -55
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontSize": {
-                    "value": 9
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "encode": {
-                "enter": {
-                  "fill": {
-                    "value": "gray"
-                  },
-                  "zindex": {
-                    "value": 10
-                  },
-                  "text": {
-                    "value": "Low (index 2)"
-                  },
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "roadside",
-                    "value": 23
-                  },
-                  "dx": {
-                    "value": -55
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontSize": {
-                    "value": 9
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "encode": {
-                "enter": {
-                  "fill": {
-                    "value": "gray"
-                  },
-                  "zindex": {
-                    "value": 10
-                  },
-                  "text": {
-                    "value": "Low (index 3): Enjoy your usual outdoor activities up to this level."
-                  },
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "roadside",
-                    "value": 35.5
-                  },
-                  "dx": {
-                    "value": -55
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontSize": {
-                    "value": 9
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "elementId": "crime",
-      "view": {
-        "metadata": {},
-        "resources": [
-          {
-            "datasetId": "crime",
-            "name": "recorded-offences",
-            "transform": []
-          }
-        ],
-        "specType": "vega",
-        "spec": {
-          "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 218,
-          "height": 160,
-          "padding": 0,
-          "data": [
-            {
-              "name": "recorded-offences",
-              "format": {
-                "parse": {
-                  "Year": "date"
-                }
-              }
-            },
-            {
-              "name": "inner-almaty",
-              "source": "recorded-offences",
-              "transform": [
-                {
-                  "type": "filter",
-                  "expr": "datum.Borough == 'Inner London'"
-                }
-              ]
-            },
-            {
-              "name": "outer-almaty",
-              "source": "recorded-offences",
-              "transform": [
-                {
-                  "type": "filter",
-                  "expr": "datum.Borough == 'Outer London'"
-                }
-              ]
-            }
-          ],
-          "scales": [
-            {
-              "name": "x",
-              "type": "utc",
-              "range": "width",
-              "domain": {
-                "data": "recorded-offences",
-                "field": "Year"
-              }
-            },
-            {
-              "name": "value",
-              "type": "linear",
-              "range": "height",
-              "zero": false,
-              "domain": {
-                "data": "recorded-offences",
-                "field": "Value"
-              },
-              "domainMax": 600000,
-              "domainMin": 250000
-            }
-          ],
-          "axes": [
-            {
-              "orient": "bottom",
-              "scale": "x",
-              "labelFont": "Lato",
-              "domain": false,
-              "ticks": false,
-              "labelPadding": 10,
-              "labelBound": true,
-              "labelOverlap": true,
-              "labelFontSize": 9
-            },
-            {
-              "orient": "right",
-              "scale": "value",
-              "labelFont": "Lato",
-              "format": "s",
-              "domain": false,
-              "ticks": false,
-              "titleFontWeight": "light",
-              "labelFontSize": 9
-            }
-          ],
-          "marks": [
-            {
-              "type": "line",
-              "from": {
-                "data": "inner-almaty"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Year"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "field": "Value"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#A95F6D"
-                  }
-                }
-              }
-            },
-            {
-              "type": "line",
-              "from": {
-                "data": "outer-almaty"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Year"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "field": "Value"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#ECAFAF"
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "from": {
-                "data": "inner-almaty"
-              },
-              "encode": {
-                "enter": {
-                  "text": {
-                    "value": "Inner Almaty"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "value": 570000
-                  },
-                  "fill": {
-                    "value": "#A95F6D"
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontWeight": {
-                    "value": 100
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "from": {
-                "data": "outer-almaty"
-              },
-              "encode": {
-                "enter": {
-                  "text": {
-                    "value": "Outer Almaty"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "value": 440000
-                  },
-                  "fill": {
-                    "value": "#ECAFAF"
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontWeight": {
-                    "value": 100
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
       "elementId": "economy",
       "view": {
         "title": "Economy",
-        "legend": "Recent unemployment rate",
-        "footer": "Data are sourced from the Almaty Datastore.",
+        "legend": "Recent GNI per capita figure based on purchasing power parity",
+        "footer": "Data is sourced from Open Data Kazakhstan project.",
         "resources": [
           {
-            "datasetId": "unemployment",
-            "name": "unemployment-rate",
+            "datasetId": "gni-per-capita-ppp",
+            "name": "gni-per-capita-ppp",
             "transform": [
+              {
+                "type": "filter",
+                "expression": "data['Country Code'] == 'KAZ'"
+              },
               {
                 "type": "aggregate",
                 "fields": [
-                  "date"
+                  "Year"
                 ],
                 "operations": [
                   "argmax"
@@ -511,31 +29,31 @@ var config = {
         ],
         "specType": "figure",
         "spec": {
-          "fieldName": "unemployment_rate",
-          "suffix": "%"
+          "fieldName": "Value",
+          "suffix": " Int$"
         }
       }
     },
     {
-      "elementId": "gva",
+      "elementId": "gdp-per-capita-ppp",
       "view": {
         "metadata": {},
         "resources": [
           {
-            "datasetId": "gva",
-            "name": "gva",
+            "datasetId": "gdp-per-capita-ppp",
+            "name": "gdp-per-capita",
             "transform": []
           }
         ],
         "specType": "vega",
         "spec": {
           "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 228,
+          "width": 280,
           "height": 160,
           "padding": 0,
           "data": [
             {
-              "name": "gva",
+              "name": "gdp-per-capita",
               "format": {
                 "parse": {
                   "Year": "date"
@@ -544,7 +62,57 @@ var config = {
               "transform": [
                 {
                   "type": "filter",
-                  "expr": "datum['Region name'] == 'London'"
+                  "expr": "datum['Year'] > 1987"
+                }
+              ]
+            },
+            {
+              "name": "kz",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'KAZ'"
+                }
+              ]
+            },
+            {
+              "name": "kg",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'KGZ'"
+                }
+              ]
+            },
+            {
+              "name": "ru",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'RUS'"
+                }
+              ]
+            },
+            {
+              "name": "uz",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'UZB'"
+                }
+              ]
+            },
+            {
+              "name": "eca",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'ECA'"
                 }
               ]
             }
@@ -555,7 +123,7 @@ var config = {
               "type": "utc",
               "range": "width",
               "domain": {
-                "data": "gva",
+                "data": "gdp-per-capita",
                 "field": "Year"
               }
             },
@@ -565,7 +133,7 @@ var config = {
               "range": "height",
               "zero": false,
               "domain": {
-                "data": "gva",
+                "data": "gdp-per-capita",
                 "field": "Value"
               }
             }
@@ -598,7 +166,7 @@ var config = {
             {
               "type": "line",
               "from": {
-                "data": "gva"
+                "data": "kz"
               },
               "encode": {
                 "enter": {
@@ -614,179 +182,7 @@ var config = {
                     "value": 2
                   },
                   "stroke": {
-                    "value": "#A95F6D"
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "elementId": "health-and-safety",
-      "view": {
-        "title": "Health and Safety",
-        "legend": "Recent average roadside PM2.5 level",
-        "footer": "Data are sourced from the Almaty Datastore.",
-        "resources": [
-          {
-            "datasetId": "air-quality",
-            "name": "monthly-averages",
-            "transform": [
-              {
-                "type": "aggregate",
-                "fields": [
-                  "Month"
-                ],
-                "operations": [
-                  "argmax"
-                ]
-              }
-            ]
-          }
-        ],
-        "specType": "figure",
-        "spec": {
-          "fieldName": "London Mean Background PM2.5 Particulate (ug/m3)",
-          "suffix": " ug/m3"
-        }
-      }
-    },
-    {
-      "elementId": "housing",
-      "view": {
-        "metadata": {},
-        "resources": [
-          {
-            "datasetId": "home-affordability",
-            "name": "london-home-index",
-            "transform": []
-          }
-        ],
-        "specType": "vega",
-        "spec": {
-          "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 238,
-          "height": 160,
-          "padding": 0,
-          "data": [
-            {
-              "name": "london-home-index",
-              "format": {
-                "parse": {
-                  "Year": "date"
-                }
-              }
-            },
-            {
-              "name": "london",
-              "source": "london-home-index",
-              "transform": [
-                {
-                  "type": "filter",
-                  "expr": "datum.Area == 'London'"
-                }
-              ]
-            },
-            {
-              "name": "england",
-              "source": "london-home-index",
-              "transform": [
-                {
-                  "type": "filter",
-                  "expr": "datum.Area == 'England'"
-                }
-              ]
-            }
-          ],
-          "scales": [
-            {
-              "name": "x",
-              "type": "utc",
-              "range": "width",
-              "domain": {
-                "data": "london",
-                "field": "Year"
-              }
-            },
-            {
-              "name": "value",
-              "type": "linear",
-              "range": "height",
-              "zero": true,
-              "domain": {
-                "data": "london",
-                "field": "Value"
-              },
-              "domainMin": 2,
-              "domainMax": 16
-            }
-          ],
-          "axes": [
-            {
-              "orient": "bottom",
-              "scale": "x",
-              "labelFont": "Lato",
-              "domain": false,
-              "ticks": false,
-              "labelPadding": 10,
-              "labelFontSize": 9
-            },
-            {
-              "orient": "right",
-              "scale": "value",
-              "labelFont": "Lato",
-              "domain": false,
-              "ticks": false,
-              "labelFontSize": 9
-            }
-          ],
-          "marks": [
-            {
-              "type": "line",
-              "from": {
-                "data": "london"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Year"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "field": "Value"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#A95F6D"
-                  }
-                }
-              }
-            },
-            {
-              "type": "line",
-              "from": {
-                "data": "england"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Year"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "field": "Value"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#ECAFAF"
+                    "value": "#01aeca"
                   }
                 }
               }
@@ -794,33 +190,7 @@ var config = {
             {
               "type": "text",
               "from": {
-                "data": "london"
-              },
-              "encode": {
-                "enter": {
-                  "text": {
-                    "value": "Almaty"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "value": 9
-                  },
-                  "fill": {
-                    "value": "#A95F6D"
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontWeight": {
-                    "value": 100
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "from": {
-                "data": "england"
+                "data": "kz"
               },
               "encode": {
                 "enter": {
@@ -829,7 +199,207 @@ var config = {
                   },
                   "y": {
                     "scale": "value",
-                    "value": 3
+                    "value": 23000
+                  },
+                  "fill": {
+                    "value": "#01aeca"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "ru"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#0236a6"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "ru"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Russia"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 25000
+                  },
+                  "fill": {
+                    "value": "#0236a6"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "uz"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#30b24b"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "uz"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Uzbekistan"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 21000
+                  },
+                  "fill": {
+                    "value": "#30b24b"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "kg"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#e50f2b"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "kg"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Kyrgyz Republic"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 19000
+                  },
+                  "fill": {
+                    "value": "#e50f2b"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "eca"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#ECAFAF"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "eca"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Europe & Central Asia (excluding high income)"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 27000
                   },
                   "fill": {
                     "value": "#ECAFAF"
@@ -848,61 +418,84 @@ var config = {
       }
     },
     {
-      "elementId": "life-expectancy",
+      "elementId": "gdp-per-capita",
       "view": {
         "metadata": {},
         "resources": [
           {
-            "datasetId": "life-expectancy",
-            "name": "male-life-expectancy",
-            "transform": []
-          },
-          {
-            "datasetId": "london-life-expectancy",
-            "name": "female-life-expectancy",
+            "datasetId": "gdp-per-capita",
+            "name": "gdp-per-capita",
             "transform": []
           }
         ],
         "specType": "vega",
         "spec": {
           "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 238,
+          "width": 280,
           "height": 160,
           "padding": 0,
           "data": [
             {
-              "name": "male-life-expectancy",
+              "name": "gdp-per-capita",
               "format": {
                 "parse": {
                   "Year": "date"
                 }
-              }
-            },
-            {
-              "name": "female-life-expectancy",
-              "format": {
-                "parse": {
-                  "Year": "date"
-                }
-              }
-            },
-            {
-              "name": "male-le-london",
-              "source": "male-life-expectancy",
+              },
               "transform": [
                 {
                   "type": "filter",
-                  "expr": "datum['Local Authority'] == 'London'"
+                  "expr": "datum['Year'] > 1987"
                 }
               ]
             },
             {
-              "name": "female-le-london",
-              "source": "female-life-expectancy",
+              "name": "kz",
+              "source": "gdp-per-capita",
               "transform": [
                 {
                   "type": "filter",
-                  "expr": "datum['Local Authority'] == 'London'"
+                  "expr": "datum['Country Code'] == 'KAZ'"
+                }
+              ]
+            },
+            {
+              "name": "kg",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'KGZ'"
+                }
+              ]
+            },
+            {
+              "name": "ru",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'RUS'"
+                }
+              ]
+            },
+            {
+              "name": "uz",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'UZB'"
+                }
+              ]
+            },
+            {
+              "name": "eca",
+              "source": "gdp-per-capita",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'ECA'"
                 }
               ]
             }
@@ -913,7 +506,7 @@ var config = {
               "type": "utc",
               "range": "width",
               "domain": {
-                "data": "male-le-london",
+                "data": "gdp-per-capita",
                 "field": "Year"
               }
             },
@@ -921,13 +514,11 @@ var config = {
               "name": "value",
               "type": "linear",
               "range": "height",
-              "zero": true,
+              "zero": false,
               "domain": {
-                "data": "male-le-london",
+                "data": "gdp-per-capita",
                 "field": "Value"
-              },
-              "domainMin": 72,
-              "domainMax": 86
+              }
             }
           ],
           "axes": [
@@ -935,6 +526,7 @@ var config = {
               "orient": "bottom",
               "scale": "x",
               "labelFont": "Lato",
+              "format": "%Y",
               "domain": false,
               "ticks": false,
               "labelPadding": 10,
@@ -945,8 +537,11 @@ var config = {
               "orient": "right",
               "scale": "value",
               "labelFont": "Lato",
+              "format": "s",
+              "grid": true,
               "domain": false,
               "ticks": false,
+              "titleFontWeight": "light",
               "labelFontSize": 9
             }
           ],
@@ -954,7 +549,7 @@ var config = {
             {
               "type": "line",
               "from": {
-                "data": "male-le-london"
+                "data": "kz"
               },
               "encode": {
                 "enter": {
@@ -970,7 +565,33 @@ var config = {
                     "value": 2
                   },
                   "stroke": {
-                    "value": "#A95F6D"
+                    "value": "#01aeca"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "kz"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Kazakhstan"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 11500
+                  },
+                  "fill": {
+                    "value": "#01aeca"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
                   }
                 }
               }
@@ -978,7 +599,157 @@ var config = {
             {
               "type": "line",
               "from": {
-                "data": "female-le-london"
+                "data": "ru"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#0236a6"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "ru"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Russia"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 13000
+                  },
+                  "fill": {
+                    "value": "#0236a6"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "uz"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#30b24b"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "uz"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Uzbekistan"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 10000
+                  },
+                  "fill": {
+                    "value": "#30b24b"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "kg"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#e50f2b"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "kg"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Kyrgyz Republic"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 8500
+                  },
+                  "fill": {
+                    "value": "#e50f2b"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "eca"
               },
               "encode": {
                 "enter": {
@@ -1002,45 +773,16 @@ var config = {
             {
               "type": "text",
               "from": {
-                "data": "male-le-london"
-              },
-              "encode": {
-                "enter": {
-                  "fill": {
-                    "value": "A95F6D"
-                  },
-                  "zindex": {
-                    "value": 10
-                  },
-                  "text": {
-                    "value": "Male"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "value": 75
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontSize": {
-                    "value": 9
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "from": {
-                "data": "female-le-london"
+                "data": "eca"
               },
               "encode": {
                 "enter": {
                   "text": {
-                    "value": "Female"
+                    "value": "Europe & Central Asia (excluding high income)"
                   },
                   "y": {
                     "scale": "value",
-                    "value": 81
+                    "value": 14500
                   },
                   "fill": {
                     "value": "#ECAFAF"
@@ -1059,313 +801,84 @@ var config = {
       }
     },
     {
-      "elementId": "livability",
-      "view": {
-        "title": "Livability",
-        "legend": "Bus journeys in recent month",
-        "footer": "Data are sourced from the Almaty Datastore.",
-        "resources": [
-          {
-            "datasetId": "public-transport",
-            "name": "london-public-transport",
-            "transform": [
-              {
-                "type": "aggregate",
-                "fields": [
-                  "Period beginning"
-                ],
-                "operations": [
-                  "argmax"
-                ]
-              }
-            ]
-          }
-        ],
-        "specType": "figure",
-        "spec": {
-          "fieldName": "Bus journeys (m)",
-          "suffix": " million"
-        }
-      }
-    },
-    {
-      "elementId": "population",
+      "elementId": "gni-per-capita-ppp",
       "view": {
         "metadata": {},
         "resources": [
           {
-            "datasetId": "population",
-            "name": "london-population-history",
-            "transform": []
-          },
-          {
-            "datasetId": "population",
-            "name": "london-population-projection",
+            "datasetId": "gni-per-capita-ppp",
+            "name": "gni-per-capita-ppp",
             "transform": []
           }
         ],
         "specType": "vega",
         "spec": {
           "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 238,
+          "width": 280,
           "height": 160,
           "padding": 0,
           "data": [
             {
-              "name": "london-population-history",
+              "name": "gni-per-capita-ppp",
               "format": {
                 "parse": {
                   "Year": "date"
-                }
-              }
-            },
-            {
-              "name": "london-population-projection",
-              "format": {
-                "parse": {
-                  "Year": "date"
-                }
-              }
-            }
-          ],
-          "scales": [
-            {
-              "name": "x",
-              "type": "utc",
-              "range": "width",
-              "domain": {
-                "data": "london-population-history",
-                "field": "Year"
-              },
-              "domainMax": 2524608000000
-            },
-            {
-              "name": "value",
-              "type": "linear",
-              "range": "height",
-              "zero": false,
-              "domain": {
-                "data": "london-population-history",
-                "field": "Value"
-              },
-              "domainMin": 6700000,
-              "domainMax": 11500000
-            }
-          ],
-          "axes": [
-            {
-              "orient": "bottom",
-              "scale": "x",
-              "labelFont": "Lato",
-              "format": "%Y",
-              "domain": false,
-              "ticks": false,
-              "labelPadding": 10,
-              "labelBound": true,
-              "labelOverlap": true,
-              "labelFontSize": 9
-            },
-            {
-              "orient": "right",
-              "scale": "value",
-              "labelFont": "Lato",
-              "grid": true,
-              "format": "s",
-              "domain": false,
-              "ticks": false,
-              "titleFontWeight": "light",
-              "labelFontSize": 9
-            }
-          ],
-          "marks": [
-            {
-              "type": "line",
-              "from": {
-                "data": "london-population-history"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Year"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "field": "Value"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#A95F6D"
-                  }
-                }
-              }
-            },
-            {
-              "type": "line",
-              "from": {
-                "data": "london-population-projection"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Year"
-                  },
-                  "y": {
-                    "scale": "value",
-                    "field": "Value"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#A95F6D"
-                  },
-                  "strokeDash": {
-                    "value": [
-                      5,
-                      5
-                    ]
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "elementId": "transport-delays",
-      "view": {
-        "metadata": {},
-        "resources": [
-          {
-            "datasetId": "underground-performance",
-            "name": "key-trends",
-            "transform": []
-          }
-        ],
-        "specType": "vega",
-        "spec": {
-          "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 225,
-          "height": 160,
-          "padding": 0,
-          "data": [
-            {
-              "name": "key-trends",
-              "format": {
-                "parse": {
-                  "Month": "date"
-                }
-              }
-            }
-          ],
-          "scales": [
-            {
-              "name": "x",
-              "type": "utc",
-              "range": "width",
-              "domain": {
-                "data": "key-trends",
-                "field": "Month"
-              }
-            },
-            {
-              "name": "hours",
-              "type": "linear",
-              "range": "height",
-              "zero": false,
-              "domain": {
-                "data": "key-trends",
-                "field": "Number of Lost Customer Hours"
-              }
-            }
-          ],
-          "axes": [
-            {
-              "orient": "bottom",
-              "scale": "x",
-              "labelFont": "Lato",
-              "format": "%Y",
-              "domain": false,
-              "ticks": false,
-              "labelPadding": 10,
-              "labelBound": true,
-              "labelFontSize": 9
-            },
-            {
-              "orient": "right",
-              "scale": "hours",
-              "labelFont": "Lato",
-              "format": "s",
-              "domain": false,
-              "ticks": false,
-              "titleFontWeight": "light",
-              "labelFontSize": 9
-            }
-          ],
-          "marks": [
-            {
-              "type": "line",
-              "from": {
-                "data": "key-trends"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Month"
-                  },
-                  "y": {
-                    "scale": "hours",
-                    "field": "Number of Lost Customer Hours"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#A95F6D"
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "elementId": "transport-journeys",
-      "view": {
-        "metadata": {},
-        "resources": [
-          {
-            "datasetId": "public-transport",
-            "name": "london-public-transport",
-            "transform": []
-          }
-        ],
-        "specType": "vega",
-        "spec": {
-          "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 230,
-          "height": 160,
-          "padding": 0,
-          "data": [
-            {
-              "name": "london-public-transport",
-              "format": {
-                "parse": {
-                  "Period beginning": "date"
                 }
               },
               "transform": [
                 {
-                  "type": "formula",
-                  "expr": "parseInt(datum['DLR Journeys (m)']) + parseInt(datum['Tram Journeys (m)']) + parseInt(datum['Overground Journeys (m)']) || 0 + parseInt(datum['Emirates Airline Journeys (m)']) || 0 + parseInt(datum['TfL Rail Journeys (m)']) || 0",
-                  "as": "other total"
+                  "type": "filter",
+                  "expr": "datum['Year'] > 1987"
+                }
+              ]
+            },
+            {
+              "name": "kz",
+              "source": "gni-per-capita-ppp",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'KAZ'"
+                }
+              ]
+            },
+            {
+              "name": "kg",
+              "source": "gni-per-capita-ppp",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'KGZ'"
+                }
+              ]
+            },
+            {
+              "name": "ru",
+              "source": "gni-per-capita-ppp",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'RUS'"
+                }
+              ]
+            },
+            {
+              "name": "uz",
+              "source": "gni-per-capita-ppp",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'UZB'"
+                }
+              ]
+            },
+            {
+              "name": "eca",
+              "source": "gni-per-capita-ppp",
+              "transform": [
+                {
+                  "type": "filter",
+                  "expr": "datum['Country Code'] == 'ECA'"
                 }
               ]
             }
@@ -1376,17 +889,18 @@ var config = {
               "type": "utc",
               "range": "width",
               "domain": {
-                "data": "london-public-transport",
-                "field": "Period beginning"
+                "data": "gni-per-capita-ppp",
+                "field": "Year"
               }
             },
             {
-              "name": "journeys",
+              "name": "value",
               "type": "linear",
               "range": "height",
+              "zero": false,
               "domain": {
-                "data": "london-public-transport",
-                "field": "[Bus journeys (m)]"
+                "data": "gni-per-capita-ppp",
+                "field": "Value"
               }
             }
           ],
@@ -1399,14 +913,15 @@ var config = {
               "domain": false,
               "ticks": false,
               "labelPadding": 10,
-              "labelBound": true,
               "labelOverlap": true,
               "labelFontSize": 9
             },
             {
               "orient": "right",
-              "scale": "journeys",
+              "scale": "value",
               "labelFont": "Lato",
+              "format": "s",
+              "grid": true,
               "domain": false,
               "ticks": false,
               "titleFontWeight": "light",
@@ -1417,23 +932,49 @@ var config = {
             {
               "type": "line",
               "from": {
-                "data": "london-public-transport"
+                "data": "kz"
               },
               "encode": {
                 "enter": {
                   "x": {
                     "scale": "x",
-                    "field": "Period beginning"
+                    "field": "Year"
                   },
                   "y": {
-                    "scale": "journeys",
-                    "field": "[Bus journeys (m)]"
+                    "scale": "value",
+                    "field": "Value"
                   },
                   "strokeWidth": {
                     "value": 2
                   },
                   "stroke": {
-                    "value": "#A95F6D"
+                    "value": "#01aeca"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "kz"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Kazakhstan"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 23000
+                  },
+                  "fill": {
+                    "value": "#01aeca"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
                   }
                 }
               }
@@ -1441,17 +982,167 @@ var config = {
             {
               "type": "line",
               "from": {
-                "data": "london-public-transport"
+                "data": "ru"
               },
               "encode": {
                 "enter": {
                   "x": {
                     "scale": "x",
-                    "field": "Period beginning"
+                    "field": "Year"
                   },
                   "y": {
-                    "scale": "journeys",
-                    "field": "[Underground journeys (m)]"
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#0236a6"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "ru"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Russia"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 25000
+                  },
+                  "fill": {
+                    "value": "#0236a6"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "uz"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#30b24b"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "uz"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Uzbekistan"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 21000
+                  },
+                  "fill": {
+                    "value": "#30b24b"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "kg"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#e50f2b"
+                  }
+                }
+              }
+            },
+            {
+              "type": "text",
+              "from": {
+                "data": "kg"
+              },
+              "encode": {
+                "enter": {
+                  "text": {
+                    "value": "Kyrgyz Republic"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "value": 19000
+                  },
+                  "fill": {
+                    "value": "#e50f2b"
+                  },
+                  "font": {
+                    "value": "Lato"
+                  },
+                  "fontWeight": {
+                    "value": 100
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "eca"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
                   },
                   "strokeWidth": {
                     "value": 2
@@ -1463,68 +1154,18 @@ var config = {
               }
             },
             {
-              "type": "line",
-              "from": {
-                "data": "london-public-transport"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "Period beginning"
-                  },
-                  "y": {
-                    "scale": "journeys",
-                    "field": "other total"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#D7706C"
-                  }
-                }
-              }
-            },
-            {
               "type": "text",
               "from": {
-                "data": "london-public-transport"
+                "data": "eca"
               },
               "encode": {
                 "enter": {
                   "text": {
-                    "value": "Bus"
+                    "value": "Europe & Central Asia (excluding high income)"
                   },
                   "y": {
-                    "scale": "journeys",
-                    "value": 200
-                  },
-                  "fill": {
-                    "value": "#A95F6D"
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontWeight": {
-                    "value": 100
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "from": {
-                "data": "london-public-transport"
-              },
-              "encode": {
-                "enter": {
-                  "text": {
-                    "value": "Underground"
-                  },
-                  "y": {
-                    "scale": "journeys",
-                    "value": 100
+                    "scale": "value",
+                    "value": 27000
                   },
                   "fill": {
                     "value": "#ECAFAF"
@@ -1534,132 +1175,6 @@ var config = {
                   },
                   "fontWeight": {
                     "value": 100
-                  }
-                }
-              }
-            },
-            {
-              "type": "text",
-              "from": {
-                "data": "london-public-transport"
-              },
-              "encode": {
-                "enter": {
-                  "text": {
-                    "value": "All other"
-                  },
-                  "y": {
-                    "scale": "journeys",
-                    "value": 25
-                  },
-                  "fill": {
-                    "value": "#D7706C"
-                  },
-                  "font": {
-                    "value": "Lato"
-                  },
-                  "fontWeight": {
-                    "value": 100
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "elementId": "unemployment",
-      "view": {
-        "metadata": {},
-        "resources": [
-          {
-            "datasetId": "unemployment",
-            "name": "unemployment-rate",
-            "transform": []
-          }
-        ],
-        "specType": "vega",
-        "spec": {
-          "$schema": "https://vega.github.io/schema/vega/v3.json",
-          "width": 245,
-          "height": 160,
-          "padding": 0,
-          "data": [
-            {
-              "name": "unemployment-rate",
-              "format": {
-                "parse": {
-                  "date": "date"
-                }
-              }
-            }
-          ],
-          "scales": [
-            {
-              "name": "x",
-              "type": "utc",
-              "range": "width",
-              "domain": {
-                "data": "unemployment-rate",
-                "field": "date"
-              }
-            },
-            {
-              "name": "y",
-              "type": "linear",
-              "range": "height",
-              "nice": true,
-              "zero": false,
-              "domain": {
-                "data": "unemployment-rate",
-                "field": "unemployment_rate"
-              }
-            }
-          ],
-          "axes": [
-            {
-              "orient": "bottom",
-              "scale": "x",
-              "labelFont": "Lato",
-              "format": "%Y",
-              "domain": false,
-              "ticks": false,
-              "labelPadding": 10,
-              "labelOverlap": true,
-              "labelFontSize": 9
-            },
-            {
-              "orient": "right",
-              "scale": "y",
-              "labelFont": "Lato",
-              "domain": false,
-              "ticks": false,
-              "grid": true,
-              "labelFontSize": 9
-            }
-          ],
-          "marks": [
-            {
-              "type": "line",
-              "from": {
-                "data": "unemployment-rate"
-              },
-              "encode": {
-                "enter": {
-                  "x": {
-                    "scale": "x",
-                    "field": "date"
-                  },
-                  "y": {
-                    "scale": "y",
-                    "field": "unemployment_rate"
-                  },
-                  "strokeWidth": {
-                    "value": 2
-                  },
-                  "stroke": {
-                    "value": "#A95F6D"
                   }
                 }
               }
@@ -1670,14 +1185,8 @@ var config = {
     }
   ],
   "datasets": [
-    "https://datahub.io/london/air-quality",
-    "https://datahub.io/london/crime",
-    "https://datahub.io/london/gva",
-    "https://datahub.io/london/home-affordability",
-    "https://datahub.io/london/life-expectancy",
-    "https://datahub.io/london/population",
-    "https://datahub.io/london/underground-performance",
-    "https://datahub.io/london/public-transport",
-    "https://datahub.io/london/unemployment"
+    "https://github.com/open-data-kazakhstan/gdp-per-capita-ppp",
+    "https://github.com/open-data-kazakhstan/gdp-per-capita",
+    "https://github.com/open-data-kazakhstan/gni-per-capita-ppp"
   ]
 }

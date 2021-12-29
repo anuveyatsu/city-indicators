@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Almaty City Dashboard</title>
+    <title>Kazakhstan Country Dashboard</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,11 +27,11 @@
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2">
                     <div class="main-heading text-center">
-                        <h1>Almaty - City Dashboard</h1>
+                        <h1>Kazakhstan - Country Dashboard</h1>
                         <p>
-                            The Almaty Dashboard is a free and open data-sharing portal where anyone can access data relating to the capital. Whether
+                            The Kazakhstan Dashboard is a free and open data-sharing portal where anyone can access data relating to the country. Whether
                             you're a citizen, business owner, researcher or developer, the site provides over 700 datasets to help
-                            you understand the city and develop solutions to Almaty's problems.
+                            you understand the country and develop solutions to Kazakhstan's problems.
                         </p>
                     </div>
                 </div>
@@ -47,19 +47,18 @@
                 <div class="col-sm-3">
                     <div class="card card-height">
                         <div class="card-header card-green">
-                          Gross Value Added (GVA)
+                          Gross Domestic Product per capita
                         </div>
                         <div class="card-body">
                           <div class="content-top">
-                            <h4>Almaty GVA per capita (USD)</h4>
-                            <p>Estimates of GVA per head from 1997</p>
+                            <h4>GDP per head (current $)</h4>
+                            <p>Kazakhstan and related countries</p>
                           </div>
                           <div class="content-main">
-                            <div class="react-me" data-type="data-views" id="gva"></div>
+                            <div class="react-me" data-type="data-views" id="gdp-per-capita"></div>
                           </div>
                           <div class="content-bottom">
-                            <p><a href="https://datahub.io/london/gva">Download raw data</a></p>
-                            <p>Source: <a href="https://data.london.gov.uk/" target="_blank">Datastore</a></p>
+                            <p>Source: <a href="https://github.com/open-data-kazakhstan" target="_blank">Open Data Kazakhstan</a></p>
                           </div>
                         </div>
                     </div>
@@ -67,19 +66,18 @@
                 <div class="col-sm-3">
                     <div class="card card-height">
                         <div class="card-header card-green">
-                          Unemployment rate
+                          Gross Domestic Product per capita (PPP)
                         </div>
                         <div class="card-body">
                           <div class="content-top">
-                            <h4>Almaty unemployment rate</h4>
-                            <p>From 2009 to current</p>
+                            <h4>Based on purchasing power parity</h4>
+                            <p>Kazakhstan and related countries</p>
                           </div>
                           <div class="content-main">
-                            <div class="react-me" data-type="data-views" id="unemployment"></div>
+                            <div class="react-me" data-type="data-views" id="gdp-per-capita-ppp"></div>
                           </div>
                           <div class="content-bottom">
-                            <p><a href="https://datahub.io/london/unemployment">Download raw data</a></p>
-                            <p>Source: <a href="https://data.london.gov.uk/" target="_blank">Datastore</a></p>
+                            <p>Source: <a href="https://github.com/open-data-kazakhstan" target="_blank">Open Data Kazakhstan</a></p>
                           </div>
                         </div>
                     </div>
@@ -87,19 +85,18 @@
                 <div class="col-sm-3">
                     <div class="card card-height">
                         <div class="card-header card-green">
-                          Population
+                          Gross National Income
                         </div>
                         <div class="card-body">
                           <div class="content-top">
-                            <h4>Historical and projection</h4>
-                            <p>From 1961 to 2050</p>
+                            <h4>Based on purchasing power parity</h4>
+                            <p>Kazakhstan and related countries</p>
                           </div>
                           <div class="content-main">
-                            <div class="react-me" data-type="data-views" id="population"></div>
+                            <div class="react-me" data-type="data-views" id="gni-per-capita-ppp"></div>
                           </div>
                           <div class="content-bottom">
-                            <p><a href="https://datahub.io/london/population">Download raw data</a></p>
-                            <p>Source: <a href="https://data.london.gov.uk/" target="_blank">Datastore</a></p>
+                            <p>Source: <a href="https://github.com/open-data-kazakhstan" target="_blank">Open Data Kazakhstan</a></p>
                           </div>
                         </div>
                     </div>
@@ -175,76 +172,6 @@
                 </div>
             </div>
             <!--End 2nd Row-->
-
-            <!--Start 3rd Row-->
-            <div class="row row-card">
-                <div class="col-sm-3">
-                    <div class="background-card card-height card-red" id="livability">
-
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card card-height">
-                        <div class="card-header card-red">
-                          House prices
-                        </div>
-                        <div class="card-body">
-                          <div class="content-top">
-                            <h4>Median Housing Affordability</h4>
-                            <p>Comparison between Almaty and Kazakhstan</p>
-                          </div>
-                          <div class="content-main">
-                            <div class="react-me" data-type="data-views" id="housing"></div>
-                          </div>
-                          <div class="content-bottom">
-                            <p><a href="https://datahub.io/london/home-affordability">Download raw data</a></p>
-                            <p>Source: <a href="https://data.london.gov.uk/" target="_blank">Datastore</a></p>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card card-height">
-                        <div class="card-header card-red">
-                          Transport (delays)
-                        </div>
-                        <div class="card-body">
-                          <div class="content-top">
-                            <h4>Lost Customer Hours</h4>
-                            <p>Total lost hours in the tube</p>
-                          </div>
-                          <div class="content-main">
-                            <div class="react-me" data-type="data-views" id="transport-delays"></div>
-                          </div>
-                          <div class="content-bottom">
-                            <p><a href="https://datahub.io/london/underground-performance">Download raw data</a></p>
-                            <p>Source: <a href="https://data.london.gov.uk/" target="_blank">Datastore</a></p>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card card-height">
-                        <div class="card-header card-red">
-                          Transport journeys
-                        </div>
-                        <div class="card-body">
-                          <div class="content-top">
-                            <h4>Number of Journeys (millions)</h4>
-                            <p>Underground, bus and other journeys</p>
-                          </div>
-                          <div class="content-main">
-                            <div class="react-me" data-type="data-views" id="transport-journeys"></div>
-                          </div>
-                          <div class="content-bottom">
-                            <p><a href="https://datahub.io/london/public-transport">Download raw data</a></p>
-                            <p>Source: <a href="https://data.london.gov.uk/" target="_blank">Datastore</a></p>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--End 3rd Row-->
 
     </div>
     <!--End Wrapper-->
