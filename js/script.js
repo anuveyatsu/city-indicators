@@ -1182,11 +1182,491 @@ var config = {
           ]
         }
       }
+    },
+    {
+      "elementId": "population-projection-high-fertility",
+      "view": {
+        "metadata": {},
+        "resources": [
+          {
+            "datasetId": "population-projections",
+            "name": "population",
+            "transform": []
+          },
+          {
+            "datasetId": "population-projections",
+            "name": "population-projections",
+            "transform": []
+          }
+        ],
+        "specType": "vega",
+        "spec": {
+          "$schema": "https://vega.github.io/schema/vega/v3.json",
+          "width": 270,
+          "height": 160,
+          "padding": 0,
+          "data": [
+            {
+              "name": "population",
+              "format": {
+                "parse": {
+                  "Year": "date"
+                }
+              }
+            },
+            {
+              "name": "population-projections",
+              "format": {
+                "parse": {
+                  "Year": "date"
+                }
+              }
+            }
+          ],
+          "scales": [
+            {
+              "name": "x",
+              "type": "utc",
+              "range": "width",
+              "domain": {
+                "data": "population",
+                "field": "Year"
+              },
+              "domainMax": 4102444800000
+            },
+            {
+              "name": "value",
+              "type": "linear",
+              "range": "height",
+              "zero": false,
+              "domain": {
+                "data": "population",
+                "field": "Value"
+              },
+              "domainMin": 3000000,
+              "domainMax": 60000000
+            }
+          ],
+          "axes": [
+            {
+              "orient": "bottom",
+              "scale": "x",
+              "labelFont": "Lato",
+              "format": "%Y",
+              "domain": false,
+              "ticks": false,
+              "labelPadding": 10,
+              "labelBound": true,
+              "labelOverlap": true,
+              "labelFontSize": 9
+            },
+            {
+              "orient": "right",
+              "scale": "value",
+              "labelFont": "Lato",
+              "grid": true,
+              "format": "s",
+              "domain": false,
+              "ticks": false,
+              "titleFontWeight": "light",
+              "labelFontSize": 9
+            }
+          ],
+          "marks": [
+            {
+              "type": "line",
+              "from": {
+                "data": "population"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#A95F6D"
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "population-projections"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "High Fertility"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#A95F6D"
+                  },
+                  "strokeDash": {
+                    "value": [
+                      5,
+                      5
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": "population-projection-low-fertility",
+      "view": {
+        "metadata": {},
+        "resources": [
+          {
+            "datasetId": "population-projections",
+            "name": "population",
+            "transform": []
+          },
+          {
+            "datasetId": "population-projections",
+            "name": "population-projections",
+            "transform": []
+          }
+        ],
+        "specType": "vega",
+        "spec": {
+          "$schema": "https://vega.github.io/schema/vega/v3.json",
+          "width": 270,
+          "height": 160,
+          "padding": 0,
+          "data": [
+            {
+              "name": "population",
+              "format": {
+                "parse": {
+                  "Year": "date"
+                }
+              }
+            },
+            {
+              "name": "population-projections",
+              "format": {
+                "parse": {
+                  "Year": "date"
+                }
+              }
+            }
+          ],
+          "scales": [
+            {
+              "name": "x",
+              "type": "utc",
+              "range": "width",
+              "domain": {
+                "data": "population",
+                "field": "Year"
+              },
+              "domainMax": 4102444800000
+            },
+            {
+              "name": "value",
+              "type": "linear",
+              "range": "height",
+              "zero": false,
+              "domain": {
+                "data": "population",
+                "field": "Value"
+              },
+              "domainMin": 3000000,
+              "domainMax": 60000000
+            }
+          ],
+          "axes": [
+            {
+              "orient": "bottom",
+              "scale": "x",
+              "labelFont": "Lato",
+              "format": "%Y",
+              "domain": false,
+              "ticks": false,
+              "labelPadding": 10,
+              "labelBound": true,
+              "labelOverlap": true,
+              "labelFontSize": 9
+            },
+            {
+              "orient": "right",
+              "scale": "value",
+              "labelFont": "Lato",
+              "grid": true,
+              "format": "s",
+              "domain": false,
+              "ticks": false,
+              "titleFontWeight": "light",
+              "labelFontSize": 9
+            }
+          ],
+          "marks": [
+            {
+              "type": "line",
+              "from": {
+                "data": "population"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#A95F6D"
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "population-projections"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Low Fertility"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#A95F6D"
+                  },
+                  "strokeDash": {
+                    "value": [
+                      5,
+                      5
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": "population-projection-medium-fertility",
+      "view": {
+        "metadata": {},
+        "resources": [
+          {
+            "datasetId": "population-projections",
+            "name": "population",
+            "transform": []
+          },
+          {
+            "datasetId": "population-projections",
+            "name": "population-projections",
+            "transform": []
+          }
+        ],
+        "specType": "vega",
+        "spec": {
+          "$schema": "https://vega.github.io/schema/vega/v3.json",
+          "width": 270,
+          "height": 160,
+          "padding": 0,
+          "data": [
+            {
+              "name": "population",
+              "format": {
+                "parse": {
+                  "Year": "date"
+                }
+              }
+            },
+            {
+              "name": "population-projections",
+              "format": {
+                "parse": {
+                  "Year": "date"
+                }
+              }
+            }
+          ],
+          "scales": [
+            {
+              "name": "x",
+              "type": "utc",
+              "range": "width",
+              "domain": {
+                "data": "population",
+                "field": "Year"
+              },
+              "domainMax": 4102444800000
+            },
+            {
+              "name": "value",
+              "type": "linear",
+              "range": "height",
+              "zero": false,
+              "domain": {
+                "data": "population",
+                "field": "Value"
+              },
+              "domainMin": 3000000,
+              "domainMax": 60000000
+            }
+          ],
+          "axes": [
+            {
+              "orient": "bottom",
+              "scale": "x",
+              "labelFont": "Lato",
+              "format": "%Y",
+              "domain": false,
+              "ticks": false,
+              "labelPadding": 10,
+              "labelBound": true,
+              "labelOverlap": true,
+              "labelFontSize": 9
+            },
+            {
+              "orient": "right",
+              "scale": "value",
+              "labelFont": "Lato",
+              "grid": true,
+              "format": "s",
+              "domain": false,
+              "ticks": false,
+              "titleFontWeight": "light",
+              "labelFontSize": 9
+            }
+          ],
+          "marks": [
+            {
+              "type": "line",
+              "from": {
+                "data": "population"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Value"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#A95F6D"
+                  }
+                }
+              }
+            },
+            {
+              "type": "line",
+              "from": {
+                "data": "population-projections"
+              },
+              "encode": {
+                "enter": {
+                  "x": {
+                    "scale": "x",
+                    "field": "Year"
+                  },
+                  "y": {
+                    "scale": "value",
+                    "field": "Medium Fertility"
+                  },
+                  "strokeWidth": {
+                    "value": 2
+                  },
+                  "stroke": {
+                    "value": "#A95F6D"
+                  },
+                  "strokeDash": {
+                    "value": [
+                      5,
+                      5
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "elementId": "population",
+      "view": {
+        "title": "Population",
+        "legend": "Result of the census in 2021",
+        "footer": "Data is sourced from Open Data Kazakhstan project.",
+        "resources": [
+          {
+            "datasetId": "population-projections",
+            "name": "population",
+            "transform": [
+              {
+                "type": "filter",
+                "expression": "data['Country Code'] == 'KAZ'"
+              },
+              {
+                "type": "aggregate",
+                "fields": [
+                  "Year"
+                ],
+                "operations": [
+                  "argmax"
+                ]
+              }
+            ]
+          }
+        ],
+        "specType": "figure",
+        "spec": {
+          "fieldName": "Value"
+        }
+      }
     }
   ],
   "datasets": [
     "https://github.com/open-data-kazakhstan/gdp-per-capita-ppp",
     "https://github.com/open-data-kazakhstan/gdp-per-capita",
-    "https://github.com/open-data-kazakhstan/gni-per-capita-ppp"
+    "https://github.com/open-data-kazakhstan/gni-per-capita-ppp",
+    "https://github.com/open-data-kazakhstan/population-projections",
+    "https://github.com/open-data-kazakhstan/population-projections",
+    "https://github.com/open-data-kazakhstan/population-projections"
   ]
 }

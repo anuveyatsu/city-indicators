@@ -1,0 +1,35 @@
+{
+    "widget": {
+        "elementId": "population",
+        "view": {
+            "title": "Population",
+            "legend": "Result of the census in 2021",
+            "footer": "Data is sourced from Open Data Kazakhstan project.",
+            "resources": [
+                {
+                    "datasetId": "population-projections",
+                    "name": "population",
+                    "transform": [
+                        {
+                            "type": "filter",
+                            "expression": "data['Country Code'] == 'KAZ'"
+                        },
+                        {
+                            "type": "aggregate",
+                            "fields": [
+                                "Year"
+                            ],
+                            "operations": [
+                                "argmax"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "specType": "figure",
+            "spec": {
+                "fieldName": "Value"
+            }
+        }
+    }
+}
